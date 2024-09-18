@@ -1,12 +1,17 @@
 public class Auto extends Vehiculo{
     private String prestaciones;
-    private int cambios;
+    private static int cambios=0;
 
-    public Auto(String patente, String marca, double consumo, int cantRuedas, double precio, String prestaciones, int cambios) {
+    public Auto(String patente, String marca, double consumo, int cantRuedas, double precio, String prestaciones) {
         super(patente, marca, consumo, cantRuedas, precio);
         this.prestaciones = prestaciones;
-        this.cambios = cambios;
     }
+
+    //    public Auto(String patente, String marca, double consumo, int cantRuedas, double precio, String prestaciones, int cambios) {
+//        super(patente, marca, consumo, cantRuedas, precio);
+//        this.prestaciones = prestaciones;
+//        this.cambios = cambios;
+//    }
 
     public Auto() {
 
@@ -20,15 +25,15 @@ public class Auto extends Vehiculo{
         this.prestaciones = prestaciones;
     }
 
-    public int getCambios() {
+    public static int getCambios() {
         return cambios;
     }
 
-    public void setCambios(int cambios) {
-        this.cambios = cambios;
+    public static void setCambios(int cambios) {
+        Auto.cambios = cambios;
     }
 
-//    @Override
+    //    @Override
 //    public String toString() {
 //        return " [ AUTO ] \n"+" Patente:  "+getPatente()+"\n Marca: "+getMarca()+"\n Consumo de combustible: "+getConsumo()+"\n Cantidad de ruedas: "+getCantRuedas()+"\n Precio: "+getPrecio()+"$"+"\n Prestaciones: "+getPrestaciones();
 //    }
@@ -47,5 +52,16 @@ public class Auto extends Vehiculo{
                 '}';
     }
 
-    public int cambiarMarcha
+    public int cambiarMarcha(String marcha){
+        int aux = 0;
+
+        if(marcha.equals("elevar")){
+            aux=cambios+=1;
+        } else if (marcha.equals("bajar")) {
+            aux=cambios-1;
+        }
+
+        setCambios(aux);
+        return aux;
+    }
 }

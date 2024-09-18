@@ -34,9 +34,9 @@ public class Gestion {
             resultado+=vehiculo.toString();
 
             if(vehiculo instanceof Auto){
-                resultado+=((Auto)vehiculo).toString();
+                resultado+="\n"+((Auto)vehiculo).toString();
             }else if(vehiculo instanceof Moto){
-                resultado+=((Moto)vehiculo).toString();
+                resultado+="\n"+((Moto)vehiculo).toString();
             }
         }
 

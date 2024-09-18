@@ -46,4 +46,6 @@ public class Auto extends Vehiculo{
                 ", precio=" + precio +
                 '}';
     }
+
+    public int cambiarMarcha
 }

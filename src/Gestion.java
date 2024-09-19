@@ -31,13 +31,13 @@ public class Gestion {
         String resultado="";
 
         for(Vehiculo vehiculo : stock){
-            resultado+=vehiculo.toString();
+            resultado+="\n"+vehiculo.toString();
 
-            if(vehiculo instanceof Auto){
-                resultado+="\n"+((Auto)vehiculo).toString();
-            }else if(vehiculo instanceof Moto){
-                resultado+="\n"+((Moto)vehiculo).toString();
-            }
+//            if(vehiculo instanceof Auto){
+//                resultado+="\n"+((Auto)vehiculo).toString();
+//            }else if(vehiculo instanceof Moto){
+//                resultado+="\n"+((Moto)vehiculo).toString();
+//            }
         }
 
         if(resultado.isEmpty()){

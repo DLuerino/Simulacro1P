@@ -1,36 +1,34 @@
-public class Auto extends Vehiculo{
-    private String prestaciones;
-    private static int cambios=0;
+import java.util.ArrayList;
 
-    public Auto(String patente, String marca, double consumo, int cantRuedas, double precio, String prestaciones) {
+public class Auto extends Vehiculo{
+    private ArrayList<String> prestaciones=new ArrayList<>();
+    private String cambio;
+
+    public Auto(String patente, String marca, double consumo, int cantRuedas, double precio, String cambio) {
         super(patente, marca, consumo, cantRuedas, precio);
-        this.prestaciones = prestaciones;
+        this.prestaciones = new ArrayList<>();
+        this.cambio = cambio;
     }
 
-    //    public Auto(String patente, String marca, double consumo, int cantRuedas, double precio, String prestaciones, int cambios) {
-//        super(patente, marca, consumo, cantRuedas, precio);
-//        this.prestaciones = prestaciones;
-//        this.cambios = cambios;
-//    }
+    public Auto(String cambio) {
+        prestaciones = new ArrayList<>();
+        this.cambio = cambio;
+    }
 
     public Auto() {
-
+        prestaciones = new ArrayList<>();
     }
 
-    public String getPrestaciones() {
-        return prestaciones;
+    public void addPrestaciones(String nueva){
+        prestaciones.add(nueva);
     }
 
-    public void setPrestaciones(String prestaciones) {
-        this.prestaciones = prestaciones;
+    public String getCambio() {
+        return cambio;
     }
 
-    public static int getCambios() {
-        return cambios;
-    }
-
-    public static void setCambios(int cambios) {
-        Auto.cambios = cambios;
+    public void setCambio(String cambio) {
+        this.cambio = cambio;
     }
 
     //    @Override
@@ -43,7 +41,7 @@ public class Auto extends Vehiculo{
     public String toString() {
         return "Auto{" +
                 "prestaciones='" + prestaciones + '\'' +
-                ", cambios=" + cambios +
+                ", Tipo de cambio de marcha =" + cambio +
                 ", patente='" + patente + '\'' +
                 ", marca='" + marca + '\'' +
                 ", consumo=" + consumo +
@@ -52,16 +50,4 @@ public class Auto extends Vehiculo{
                 '}';
     }
 
-    public int cambiarMarcha(String marcha){
-        int aux = 0;
-
-        if(marcha.equals("elevar")){
-            aux=cambios+=1;
-        } else if (marcha.equals("bajar")) {
-            aux=cambios-1;
-        }
-
-        setCambios(aux);
-        return aux;
-    }
 }
